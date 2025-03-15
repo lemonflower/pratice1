@@ -60,6 +60,11 @@ export default function Home() {
     y_red: [210, 190, 190, 160, 170, 210, 207, 176, 176, 210, 170, 180],
     y_blue: [315, 316, 315, 315, 317, 317, 316, 316, 315, 315, 315, 315],
 };
+if (process.env.NODE_ENV === 'production') {
+    console.log('运行在生产环境');
+  } else {
+    console.log('运行在开发环境');
+  }
     return (
         <div className="charts">
             <div className="chart"> <EchartsPie echartsDemoData={echartsPie} /></div>

@@ -1,4 +1,28 @@
 .charts {  
     display:flex;
     flex-wrap:wrap;//换行
+    overflow-y: auto; // 启用垂直滚动
+  min-height: 100vh; // 占满屏幕高度
+  box-sizing: border-box;
+  outline: 1px solid rgb(55, 47, 47); 
+  min-width: 100vw; 
+  gap: 20px; // 行列间距统一控制
+   padding: 15px; // 容器内边距
+
+   .chart {
+    // 关键计算公式：50%宽度 - (总gap值 / 元素数量)
+    flex: 0 0 calc(50% - 10px); // 20px gap / 2个元素 = 10px
+    height: 0 0 calc(50% - 10px);;
+    box-sizing: border-box;
+    
+    // 响应式适配（可选）
+    @media (max-width: 768px) {
+        flex: 0 0 100%; // 小屏幕单列显示
+    }
+
+    > div {
+        width: 100%;
+        height: 100%;
+    }
+}
 }
